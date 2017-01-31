@@ -67973,7 +67973,8 @@ Header;
 }, 399, null, "UdemyCourseReact/src/components/Header.js");
 __d(/* UdemyCourseReact/src/components/AlbumList.js */function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});var _react=require(12 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
 var _reactNative=require(42 /* react-native */);
-var _axios=require(401 /* axios */);var _axios2=babelHelpers.interopRequireDefault(_axios);var
+var _axios=require(401 /* axios */);var _axios2=babelHelpers.interopRequireDefault(_axios);
+var _AlbumDetail=require(426 /* ./AlbumDetail */);var _AlbumDetail2=babelHelpers.interopRequireDefault(_AlbumDetail);var
 
 AlbumList=function(_Component){babelHelpers.inherits(AlbumList,_Component);function AlbumList(){var _ref;var _temp,_this,_ret;babelHelpers.classCallCheck(this,AlbumList);for(var _len=arguments.length,args=Array(_len),_key=0;_key<_len;_key++){args[_key]=arguments[_key];}return _ret=(_temp=(_this=babelHelpers.possibleConstructorReturn(this,(_ref=AlbumList.__proto__||Object.getPrototypeOf(AlbumList)).call.apply(_ref,[this].concat(args))),_this),_this.
 state={albums:[]},_temp),babelHelpers.possibleConstructorReturn(_this,_ret);}babelHelpers.createClass(AlbumList,[{key:'componentWillMount',value:function componentWillMount()
@@ -67985,7 +67986,7 @@ then(function(response){return _this2.setState({albums:response.data});});
 
 {
 return this.state.albums.map(function(album){return(
-_react2.default.createElement(_reactNative.Text,{key:album.title},album.title));});
+_react2.default.createElement(_AlbumDetail2.default,{key:album.title,album:album}));});
 
 }},{key:'render',value:function render()
 
@@ -69362,6 +69363,50 @@ return callback.apply(null,arr);
 };
 };
 }, 425, null, "axios/lib/helpers/spread.js");
+__d(/* UdemyCourseReact/src/components/AlbumDetail.js */function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});var _react=require(12 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
+var _reactNative=require(42 /* react-native */);
+var _Card=require(427 /* ./Card */);var _Card2=babelHelpers.interopRequireDefault(_Card);
+
+var AlbumDetail=function AlbumDetail(props){
+return(
+_react2.default.createElement(_Card2.default,null,
+_react2.default.createElement(_reactNative.Text,null,props.album.title)));
+
+
+};exports.default=
+
+AlbumDetail;
+}, 426, null, "UdemyCourseReact/src/components/AlbumDetail.js");
+__d(/* UdemyCourseReact/src/components/Card.js */function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});var _react=require(12 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
+var _reactNative=require(42 /* react-native */);
+
+var Card=function Card(props){
+return(
+_react2.default.createElement(_reactNative.View,{style:styles.containerStyle},
+props.children));
+
+
+};
+
+var styles={
+containerStyle:{
+borderWidth:1,
+borderRadius:2,
+borderColor:'#ddd',
+borderBottomWidth:0,
+shadowColor:'#000',
+shadowOffset:{width:0,height:2},
+shadowOpacity:0.1,
+shadowRadius:2,
+elevation:1,
+marginLeft:5,
+marginRight:5,
+marginTop:10}};exports.default=
+
+
+
+Card;
+}, 427, null, "UdemyCourseReact/src/components/Card.js");
 ;require(192);
 ;require(0);
 //# sourceMappingURL=index.android.map
