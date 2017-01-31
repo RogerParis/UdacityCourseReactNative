@@ -1601,7 +1601,7 @@ var _AlbumList=require(400 /* ./src/components/AlbumList */);var _AlbumList2=bab
 
 
 var App=function App(){return(
-_react2.default.createElement(_reactNative.View,null,
+_react2.default.createElement(_reactNative.View,{style:{flex:1}},
 _react2.default.createElement(_Header2.default,{headerText:'Albums'}),
 _react2.default.createElement(_AlbumList2.default,null)));};
 
@@ -67994,7 +67994,7 @@ _react2.default.createElement(_AlbumDetail2.default,{key:album.title,album:album
 console.log(this.state);
 
 return(
-_react2.default.createElement(_reactNative.View,null,
+_react2.default.createElement(_reactNative.ScrollView,null,
 this.renderAlbums()));
 
 
@@ -69367,9 +69367,10 @@ __d(/* UdemyCourseReact/src/components/AlbumDetail.js */function(global, require
 var _reactNative=require(42 /* react-native */);
 var _Card=require(427 /* ./Card */);var _Card2=babelHelpers.interopRequireDefault(_Card);
 var _CardSection=require(428 /* ./CardSection */);var _CardSection2=babelHelpers.interopRequireDefault(_CardSection);
+var _Button=require(429 /* ./Button */);var _Button2=babelHelpers.interopRequireDefault(_Button);
 
 var AlbumDetail=function AlbumDetail(_ref){var album=_ref.album;var
-title=album.title,artist=album.artist,thumbnail_image=album.thumbnail_image,image=album.image;var
+title=album.title,artist=album.artist,thumbnail_image=album.thumbnail_image,image=album.image,url=album.url;var
 thumbnailStyle=styles.thumbnailStyle,headerContentStyle=styles.headerContentStyle,thumbnailContainerStyle=styles.thumbnailContainerStyle,headerTextStyle=styles.headerTextStyle,imageStyle=styles.imageStyle;
 
 return(
@@ -69383,8 +69384,15 @@ _react2.default.createElement(_reactNative.Text,{style:headerTextStyle},title),
 _react2.default.createElement(_reactNative.Text,null,artist))),
 
 
+
 _react2.default.createElement(_CardSection2.default,null,
-_react2.default.createElement(_reactNative.Image,{style:imageStyle,source:{uri:image}}))));
+_react2.default.createElement(_reactNative.Image,{style:imageStyle,source:{uri:image}})),
+
+
+_react2.default.createElement(_CardSection2.default,null,
+_react2.default.createElement(_Button2.default,{onPress:function onPress(){return _reactNative.Linking.openURL(url);}},'Buy Now!'))));
+
+
 
 
 
@@ -69472,6 +69480,44 @@ position:'relative'}};exports.default=
 
 CardSection;
 }, 428, null, "UdemyCourseReact/src/components/CardSection.js");
+__d(/* UdemyCourseReact/src/components/Button.js */function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});var _react=require(12 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
+var _reactNative=require(42 /* react-native */);
+
+var Button=function Button(_ref){var onPress=_ref.onPress,children=_ref.children;var
+buttonStyle=styles.buttonStyle,textStyle=styles.textStyle;
+
+return(
+_react2.default.createElement(_reactNative.TouchableOpacity,{onPress:onPress,style:buttonStyle},
+_react2.default.createElement(_reactNative.Text,{style:textStyle},
+children)));
+
+
+
+};
+
+var styles={
+textStyle:{
+alignSelf:'center',
+color:'#007aff',
+fontSize:16,
+fontWeight:'600',
+paddingTop:10,
+paddingBottom:10},
+
+buttonStyle:{
+flex:1,
+alignSelf:'stretch',
+backgroundColor:'#FFF',
+borderRadius:5,
+borderWidth:1,
+borderColor:'#007aff',
+marginLeft:5,
+marginRight:5}};exports.default=
+
+
+
+Button;
+}, 429, null, "UdemyCourseReact/src/components/Button.js");
 ;require(192);
 ;require(0);
 //# sourceMappingURL=index.android.map
