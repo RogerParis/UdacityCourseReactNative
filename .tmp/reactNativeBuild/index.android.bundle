@@ -69366,11 +69366,14 @@ return callback.apply(null,arr);
 __d(/* UdemyCourseReact/src/components/AlbumDetail.js */function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});var _react=require(12 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
 var _reactNative=require(42 /* react-native */);
 var _Card=require(427 /* ./Card */);var _Card2=babelHelpers.interopRequireDefault(_Card);
+var _CardSection=require(428 /* ./CardSection */);var _CardSection2=babelHelpers.interopRequireDefault(_CardSection);
 
 var AlbumDetail=function AlbumDetail(props){
 return(
 _react2.default.createElement(_Card2.default,null,
-_react2.default.createElement(_reactNative.Text,null,props.album.title)));
+_react2.default.createElement(_CardSection2.default,null,
+_react2.default.createElement(_reactNative.Text,null,props.album.title))));
+
 
 
 };exports.default=
@@ -69407,6 +69410,31 @@ marginTop:10}};exports.default=
 
 Card;
 }, 427, null, "UdemyCourseReact/src/components/Card.js");
+__d(/* UdemyCourseReact/src/components/CardSection.js */function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});var _react=require(12 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
+var _reactNative=require(42 /* react-native */);
+
+var CardSection=function CardSection(props){
+return(
+_react2.default.createElement(_reactNative.View,{style:styles.containerStyle},
+props.children));
+
+
+};
+
+var styles={
+containerStyle:{
+borderBottomWidth:1,
+padding:5,
+backgroundColor:'#FFF',
+justifyContent:'flex-start',
+flexDirection:'row',
+borderColor:'#DDD',
+position:'relative'}};exports.default=
+
+
+
+CardSection;
+}, 428, null, "UdemyCourseReact/src/components/CardSection.js");
 ;require(192);
 ;require(0);
 //# sourceMappingURL=index.android.map
